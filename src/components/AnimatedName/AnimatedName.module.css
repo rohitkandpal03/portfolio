@@ -1,0 +1,16 @@
+.animatedName {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #61dafb;
+  margin: 2rem 0 1rem 0;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeSlideUp 1.2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+@keyframes fadeSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
