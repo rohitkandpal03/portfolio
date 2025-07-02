@@ -61,13 +61,14 @@
 
 .projectsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   padding: 0 2rem;
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
   box-sizing: border-box;
   margin-top: 1rem;
+  align-items: stretch;
 }
 
 .projectCard {
@@ -174,12 +175,14 @@
   transform: translateY(-3px);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .projectsGrid {
     grid-template-columns: 1fr;
     padding: 0 1rem;
   }
+}
 
+@media (max-width: 768px) {
   .categories {
     gap: 0.5rem;
   }
@@ -195,10 +198,6 @@
 }
 
 @media (max-width: 480px) {
-  .projectsGrid {
-    padding: 0 0.5rem;
-  }
-
   .sectionTitle {
     font-size: 1.75rem;
   }
