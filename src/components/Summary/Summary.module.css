@@ -1,0 +1,17 @@
+.summary {
+  background: #222831;
+  color: #eeeeee;
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 700px;
+  margin: 2rem auto;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+}
+.summary h2 {
+  color: #00adb5;
+  margin-bottom: 1rem;
+}
+.summary p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
