@@ -105,7 +105,7 @@ const Hero: React.FC = () => (
       <div className={styles.heroImgContainer}>
         <div className={styles.heroImgWrap}>
           <img
-            src="/docs/Rohit Kandpal.jpg"
+            src={`${import.meta.env.BASE_URL}docs/Rohit Kandpal.jpg`}
             alt="Rohit Kandpal"
             className={styles.heroImg}
           />

@@ -8,7 +8,7 @@ const About: React.FC = () => (
     <div className={styles.aboutContent}>
       <div className={styles.aboutImgContainer}>
         <img
-          src="/docs/Rohit Kandpal.jpg"
+          src={`${import.meta.env.BASE_URL}docs/Rohit Kandpal.jpg`}
           alt="Rohit Kandpal"
           className={styles.aboutImg}
         />
@@ -91,7 +91,7 @@ const About: React.FC = () => (
         </div>
         <div className={styles.downloadContainer}>
           <a
-            href="/docs/Rohit Kandpal.pdf"
+            href={`${import.meta.env.BASE_URL}docs/Rohit Kandpal.pdf`}
             className={styles.downloadBtn}
             download
           >

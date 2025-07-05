@@ -7,3 +7,10 @@ declare module "*.svg" {
   const content: string;
   export default content;
 }
+
+declare interface ImportMeta {
+  readonly env: {
+    readonly BASE_URL: string;
+    // add more env variables if needed
+  };
+}

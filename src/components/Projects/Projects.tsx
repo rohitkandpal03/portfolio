@@ -19,7 +19,7 @@ const Projects: React.FC = () => {
       title: "Studio.ai",
       description:
         "Designed and implemented the project from scratch, including authentication features such as email-based magic link login, Google OAuth login, and secure logout functionality. Developed advanced pagination techniques, real-time content editing inside an iframe, and a custom AI-powered chat assistant for content creation. Collaborated closely with backend and QA teams to ensure a seamless user experience.",
-      image: "/docs/studioAi.png",
+      image: `${import.meta.env.BASE_URL}docs/studioAi.png`,
       category: "AI Content Platform",
       technologies: [
         "React",
@@ -36,7 +36,7 @@ const Projects: React.FC = () => {
       title: "Office-IQ Document Intelligence",
       description:
         "Revolutionary document management application enabling intelligent interaction with documents through multiple data sources. Features advanced AI processing capabilities and seamless user experience.",
-      image: "/docs/officeiqAi.png",
+      image: `${import.meta.env.BASE_URL}docs/officeiqAi.png`,
       category: "Enterprise Application",
       technologies: [
         "Next.js",
@@ -53,7 +53,7 @@ const Projects: React.FC = () => {
       title: "Bajaj Finserv Health Limited",
       description:
         "Developed user interfaces for web applications to streamline hospital operations. Translated design wireframes into responsive, performant code. Improved usability and user experience for hospital staff and patients. Implemented optimization techniques and conducted thorough testing, resulting in a 25% increase in user engagement.",
-      image: "/docs/bajajFinservHealth.png",
+      image: `${import.meta.env.BASE_URL}docs/bajajFinservHealth.png`,
       category: "Healthcare Solution",
       technologies: [
         "Next.js",
@@ -72,7 +72,7 @@ const Projects: React.FC = () => {
       title: "Virtual Combine Sports Platform",
       description:
         "Comprehensive sports platform connecting coaches and athletes with team management, performance tracking, and national leaderboard functionality. Built for scalability and real-time data synchronization.",
-      image: "/docs/virtualCombine.png",
+      image: `${import.meta.env.BASE_URL}docs/virtualCombine.png`,
       category: "Sports Management",
       technologies: ["React.js", "JavaScript", "Performance Tracking"],
       demoLink: "https://virtualcombine.com",
