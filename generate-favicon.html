@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Generate Favicon.ico</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background: #f5f5f5;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      canvas {
+        border: 2px solid #ddd;
+        margin: 20px 0;
+        display: block;
+      }
+      button {
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin: 10px 5px;
+      }
+      button:hover {
+        background: #0056b3;
+      }
+      .preview {
+        text-align: center;
+        margin: 20px 0;
+      }
+      .instructions {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Generate Favicon.ico with "RK"</h1>
+
+      <div class="preview">
+        <h3>Preview:</h3>
+        <canvas id="faviconCanvas" width="32" height="32"></canvas>
+        <p>32x32 pixels - Black background with white "RK" text</p>
+      </div>
+
+      <div style="text-align: center">
+        <button onclick="generateFavicon()">Generate Favicon.ico</button>
+        <button onclick="downloadPNG()">Download as PNG</button>
+      </div>
+
+      <div class="instructions">
+        <h3>Instructions:</h3>
+        <ol>
+          <li>Click "Generate Favicon.ico" to create the ICO file</li>
+          <li>
+            If that doesn't work, click "Download as PNG" and convert it online
+          </li>
+          <li>Use online converters like favicon.io or convertio.co</li>
+          <li>Replace the existing favicon.ico in your public folder</li>
+        </ol>
+      </div>
+    </div>
+
+    <script>
+      const canvas = document.getElementById("faviconCanvas");
+      const ctx = canvas.getContext("2d");
+
+      // Draw the favicon
+      function drawFavicon() {
+        // Black background
+        ctx.fillStyle = "#000000";
+        ctx.fillRect(0, 0, 32, 32);
+
+        // White text
+        ctx.fillStyle = "#ffffff";
+        ctx.font = "bold 14px Arial";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText("RK", 16, 16);
+      }
+
+      // Generate ICO file
+      function generateFavicon() {
+        drawFavicon();
+
+        try {
+          // Convert canvas to blob
+          canvas.toBlob(function (blob) {
+            // Create ICO file structure
+            const icoHeader = new ArrayBuffer(6);
+            const headerView = new DataView(icoHeader);
+            headerView.setUint16(0, 0, true); // Reserved
+            headerView.setUint16(2, 1, true); // Type (1 = ICO)
+            headerView.setUint16(4, 1, true); // Number of images
+
+            // Create PNG data
+            canvas.toBlob(function (pngBlob) {
+              const reader = new FileReader();
+              reader.onload = function () {
+                const pngData = new Uint8Array(reader.result);
+
+                // Create directory entry
+                const dirEntry = new ArrayBuffer(16);
+                const dirView = new DataView(dirEntry);
+                dirView.setUint8(0, 32); // Width
+                dirView.setUint8(1, 32); // Height
+                dirView.setUint8(2, 0); // Color count
+                dirView.setUint8(3, 0); // Reserved
+                dirView.setUint16(4, 1, true); // Color planes
+                dirView.setUint16(6, 32, true); // Bits per pixel
+                dirView.setUint32(8, pngData.length, true); // Size
+                dirView.setUint32(12, 22, true); // Offset
+
+                // Combine all parts
+                const icoData = new Uint8Array(6 + 16 + pngData.length);
+                icoData.set(new Uint8Array(icoHeader), 0);
+                icoData.set(new Uint8Array(dirEntry), 6);
+                icoData.set(pngData, 22);
+
+                // Download
+                const blob = new Blob([icoData], { type: "image/x-icon" });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = "favicon.ico";
+                a.click();
+                URL.revokeObjectURL(url);
+              };
+              reader.readAsArrayBuffer(pngBlob);
+            }, "image/png");
+          }, "image/png");
+        } catch (error) {
+          alert(
+            "Error generating ICO file. Please use the PNG download option instead."
+          );
+          console.error(error);
+        }
+      }
+
+      // Download as PNG
+      function downloadPNG() {
+        drawFavicon();
+        const link = document.createElement("a");
+        link.download = "favicon.png";
+        link.href = canvas.toDataURL();
+        link.click();
+      }
+
+      // Draw initial preview
+      drawFavicon();
+    </script>
+  </body>
+</html>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Navbar.module.css";
+import logo from "../assets/logo.svg";
 
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -25,7 +26,9 @@ const Navbar: React.FC = () => {
   return (
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
       <div className={styles.navbarContainer}>
-        <div className={styles.navbarLogo}>Rohit</div>
+        <div className={styles.navbarLogo}>
+          <img src={logo} alt="rk-logo" width={45} height={45} />
+        </div>
 
         <div className={styles.mobileMenuToggle} onClick={toggleMobileMenu}>
           <span></span>
