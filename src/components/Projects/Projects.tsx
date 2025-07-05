@@ -16,24 +16,36 @@ const Projects: React.FC = () => {
   const projects: Project[] = [
     {
       id: 1,
-      title: "Office-IQ Document Intelligence",
-      description:
-        "Revolutionary document management application enabling intelligent interaction with documents through multiple data sources. Features advanced AI processing capabilities and seamless user experience.",
-      image: "/docs/officeiqAi.png",
-      category: "Enterprise Application",
-      technologies: ["Next.js", "Tailwind CSS", "Firebase"],
-      demoLink: "https://www.officeiq.ai/",
-      codeLink: "",
-    },
-    {
-      id: 2,
       title: "Studio.ai",
       description:
         "Designed and implemented the project from scratch, including authentication features such as email-based magic link login, Google OAuth login, and secure logout functionality. Developed advanced pagination techniques, real-time content editing inside an iframe, and a custom AI-powered chat assistant for content creation. Collaborated closely with backend and QA teams to ensure a seamless user experience.",
       image: "/docs/studioAi.png",
       category: "AI Content Platform",
-      technologies: ["Next.js", "React", "Google OAuth", "AI", "TypeScript"],
+      technologies: [
+        "React",
+        "React Router",
+        "Google OAuth",
+        "AI",
+        "TypeScript",
+      ],
       demoLink: "https://studioai.officeiq.digital",
+      codeLink: "",
+    },
+    {
+      id: 2,
+      title: "Office-IQ Document Intelligence",
+      description:
+        "Revolutionary document management application enabling intelligent interaction with documents through multiple data sources. Features advanced AI processing capabilities and seamless user experience.",
+      image: "/docs/officeiqAi.png",
+      category: "Enterprise Application",
+      technologies: [
+        "Next.js",
+        "Tailwind CSS",
+        "Firebase",
+        "React ToolTip",
+        "React Markdown",
+      ],
+      demoLink: "https://www.officeiq.ai/",
       codeLink: "",
     },
     {
@@ -45,7 +57,10 @@ const Projects: React.FC = () => {
       category: "Healthcare Solution",
       technologies: [
         "Next.js",
-        "JavaScript",
+        "Typescript",
+        "Redis",
+        "React Query",
+        "Emotion CSS",
         "Material UI",
         "Performance Optimization",
       ],
@@ -59,7 +74,7 @@ const Projects: React.FC = () => {
         "Comprehensive sports platform connecting coaches and athletes with team management, performance tracking, and national leaderboard functionality. Built for scalability and real-time data synchronization.",
       image: "/docs/virtualCombine.png",
       category: "Sports Management",
-      technologies: ["React.js", "JavaScript", "PHP", "Performance Tracking"],
+      technologies: ["React.js", "JavaScript", "Performance Tracking"],
       demoLink: "https://virtualcombine.com",
       codeLink: "",
     },
@@ -80,7 +95,7 @@ const Projects: React.FC = () => {
   return (
     <section className={styles.projects} id="projects">
       <h2 className={styles.sectionTitle}>Projects</h2>
-      <h3 className={styles.sectionSubtitle}>My recent work</h3>
+      {/* <h3 className={styles.sectionSubtitle}>My recent work</h3> */}
 
       {/* <div className={styles.categories}>
         {categories.map((category, index) => (
