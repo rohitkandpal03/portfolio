@@ -39,7 +39,7 @@ const About: React.FC = () => (
               </svg>
             </div>
             <div className={styles.cardContent}>
-              <span className={styles.cardValue}>4+</span>
+              <span className={styles.cardValue}>5+</span>
               <span className={styles.cardLabel}>Years Experience</span>
             </div>
           </div>
