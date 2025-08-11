@@ -8,12 +8,17 @@ const Hero: React.FC = () => (
         <h1 className={styles.name}>
           Rohit Kandpal <span className={styles.wave}>👋</span>
         </h1>
-        <h2 className={styles.title}>Software Engineer</h2>
+        <h2 className={styles.title}>Senior Software Engineer</h2>
         <p className={styles.intro}>
-          I'm a passionate software engineer dedicated to creating engaging and
-          intuitive web experiences. With a strong foundation in React.js and an
-          ever-growing skill set, I strive to build innovative and efficient
-          solutions. Let's craft something extraordinary together!
+          I’m a passionate Senior Software Engineer dedicated to creating
+          engaging and intuitive web experiences. With a strong foundation in
+          React.js, Next.js, and a continuously evolving skill set, I excel at
+          building innovative, efficient, and scalable solutions. Beyond coding,
+          I lead by example—conducting thorough code reviews, mentoring junior
+          developers, and fostering best practices that elevate team
+          performance. My goal is to deliver high-quality products while
+          inspiring and enabling teams to craft extraordinary solutions
+          together.
         </p>
         <div className={styles.heroActions}>
           <a href="#contact" className={styles.sayHelloBtn}>

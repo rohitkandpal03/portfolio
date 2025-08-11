@@ -15,7 +15,7 @@ const About: React.FC = () => (
       </div>
       <div className={styles.aboutInfo}>
         <p className={styles.summary}>
-          Hi! I am Rohit Kandpal, a Software Engineer passionate about building
+          Hi! I am Rohit Kandpal, a Senior Software Engineer passionate about building
           scalable and efficient applications. I specialize in frontend
           development and enjoy solving complex problems while working with
           modern technologies in collaborative environments.
