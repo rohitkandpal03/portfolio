@@ -1,124 +1,13 @@
 import React, { useState } from "react";
 import styles from "./Projects.module.css";
-
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  category: string;
-  technologies: string[];
-  demoLink: string;
-  codeLink: string;
-}
+import { projects, Project } from "../../constants/projects";
 
 const Projects: React.FC = () => {
-  const projects: Project[] = [
-    {
-      id: 1,
-      title: "Studio.ai",
-      description:
-        "Designed and implemented the project from scratch, including authentication features such as email-based magic link login, Google OAuth login, and secure logout functionality. Developed advanced pagination techniques, real-time content editing inside an iframe, and a custom AI-powered chat assistant for content creation. Collaborated closely with backend and QA teams to ensure a seamless user experience.",
-      image: `${import.meta.env.BASE_URL}docs/studioAi.png`,
-      category: "AI Content Platform",
-      technologies: [
-        "React.js",
-        "React Router",
-        "Google OAuth",
-        "AI",
-        "TypeScript",
-        "Firebase",
-      ],
-      demoLink: "https://studio.officeiq.ai/",
-      codeLink: "",
-    },
-    {
-      id: 2,
-      title: "Office-IQ Document Intelligence",
-      description:
-        "Revolutionary document management application enabling intelligent interaction with documents through multiple data sources. Features advanced AI processing capabilities and seamless user experience.",
-      image: `${import.meta.env.BASE_URL}docs/officeiqAi.png`,
-      category: "Enterprise Application",
-      technologies: [
-        "Next.js",
-        "Tailwind CSS",
-        "Firebase",
-        "React ToolTip",
-        "React Markdown",
-      ],
-      demoLink: "https://www.officeiq.ai/",
-      codeLink: "",
-    },
-    {
-      id: 3,
-      title: "Bajaj Finserv Health Limited",
-      description:
-        "Developed user interfaces for web applications to streamline hospital operations. Translated design wireframes into responsive, performant code. Improved usability and user experience for hospital staff and patients. Implemented optimization techniques and conducted thorough testing, resulting in a 25% increase in user engagement.",
-      image: `${import.meta.env.BASE_URL}docs/bajajFinservHealth.png`,
-      category: "Healthcare Solution",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "Redis",
-        "React Query",
-        "Emotion CSS",
-        "Material UI",
-        "Performance Optimization",
-        "Jest",
-        "React Testing Library",
-      ],
-      demoLink: "https://www.bajajfinservhealth.in/hospitals",
-      codeLink: "",
-    },
-    {
-      id: 4,
-      title: "Virtual Combine Sports Platform",
-      description:
-        "Comprehensive sports platform connecting coaches and athletes with team management, performance tracking, and national leaderboard functionality. Built for scalability and real-time data synchronization.",
-      image: `${import.meta.env.BASE_URL}docs/virtualCombine.png`,
-      category: "Sports Management",
-      technologies: [
-        "React.js",
-        "React Redux",
-        "Jest",
-        "JavaScript",
-        "Performance Tracking",
-      ],
-      demoLink: "https://virtualcombine.com",
-      codeLink: "",
-    },
-  ];
-
   const [filteredProjects] = useState<Project[]>(projects);
-
-  // useEffect(() => {
-  //   if (activeCategory === "All") {
-  //     setFilteredProjects(projects);
-  //   } else {
-  //     setFilteredProjects(
-  //       projects.filter((project) => project.category === activeCategory)
-  //     );
-  //   }
-  // }, [activeCategory, projects]);
 
   return (
     <section className={styles.projects} id="projects">
       <h2 className={styles.sectionTitle}>Projects</h2>
-      {/* <h3 className={styles.sectionSubtitle}>My recent work</h3> */}
-
-      {/* <div className={styles.categories}>
-        {categories.map((category, index) => (
-          <button
-            key={index}
-            className={`${styles.categoryBtn} ${
-              activeCategory === category ? styles.active : ""
-            }`}
-            onClick={() => setActiveCategory(category)}
-          >
-            {category}
-          </button>
-        ))}
-      </div> */}
 
       <div className={styles.projectsGrid}>
         {filteredProjects.map((project) => (
