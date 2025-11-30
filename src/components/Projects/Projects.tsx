@@ -49,7 +49,8 @@ const Projects: React.FC = () => {
                     </svg>
                     Code
                   </a>
-                ) : project.demoLink ? (
+                ) :<></>} 
+                {project.demoLink ? (
                   <a
                     href={project.demoLink}
                     target="_blank"
@@ -73,7 +74,7 @@ const Projects: React.FC = () => {
                     </svg>
                     Demo
                   </a>
-                ) : null}
+                ) : <></>}
               </div>
             </div>
           </div>

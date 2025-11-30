@@ -15,7 +15,7 @@ export const projects: Project[] = [
     title: "ShopStore",
     description:
       "A fully functional e-commerce platform built with Next.js, NextAuth, Prisma, Neon DB, TypeScript, zod, jest, react-hook-form, Shadcn UI, and Tailwind CSS. It includes authentication, product management, shopping cart, and order processing features.",
-    image: `${import.meta.env.BASE_URL}docs/studioAi.png`,
+    image: `${import.meta.env.BASE_URL}docs/shopzStore.png`,
     category: "AI Content Platform",
     technologies: [
       "Next.js",
@@ -29,7 +29,6 @@ export const projects: Project[] = [
       "Shadcn UI",
       "Tailwind CSS",
       "Vercel",
-      "Stripe",
       "PayPal"
     ],
     demoLink: "https://shopz-store.vercel.app/",
