@@ -15,8 +15,8 @@ const About: React.FC = () => (
       </div>
       <div className={styles.aboutInfo}>
         <p className={styles.summary}>
-          Hi! I am Rohit Kandpal, a Senior Software Engineer passionate about building
-          scalable and efficient applications. I specialize in frontend
+          Hi! I am Rohit Kandpal, a Senior Software Engineer passionate about
+          building scalable and efficient applications. I specialize in frontend
           development and enjoy solving complex problems while working with
           modern technologies in collaborative environments.
         </p>
@@ -62,7 +62,7 @@ const About: React.FC = () => (
               </svg>
             </div>
             <div className={styles.cardContent}>
-              <span className={styles.cardValue}>5+</span>
+              <span className={styles.cardValue}>6+</span>
               <span className={styles.cardLabel}>Projects</span>
             </div>
           </div>
